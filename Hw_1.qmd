@@ -1,0 +1,45 @@
+---
+title: "Hw_1"
+author: "Kyatham Prathibha"
+format: pdf
+execute:
+  echo: false
+---
+
+The **`warpbreaks`** dataset originates from an experiment in textile manufacturing. It records how many times yarn breaks occurred on a loom, depending on the **type of wool** used and the **tension level** applied during the weaving process.
+
+## Dataset Description
+
+-   **breaks**: Count of yarn breaks observed.
+
+-   **wool**: Wool category used in weaving (A or B)
+
+-   **tension**: Applied tension level during weaving (Low, Medium, or High)
+
+```{r}
+head(warpbreaks, 10)
+```
+
+```{r}
+boxplot(breaks ~ wool * tension, data = warpbreaks,
+        main = "Distribution of Yarn Breaks by Wool and Tension",
+        xlab = "Combination of Wool Type and Tension Level",
+        ylab = "Frequency of Yarn Breaks",
+        col = c("skyblue", "lightgreen", "orange"))
+```
+
+The boxplot shows that:
+
+**Wool A with low tension (A.L)** has the highest median number of yarn breaks (\~50), with a wide range and maximum close to 70.
+
+In contrast, **Wool B under low tension (B.L)** performs better, with a lower median (\~28) and less variability. Under **medium tension**, both wool types show reduced breaks, with **Wool B (B.M)** slightly outperforming **Wool A (A.M)**.
+
+At **high tension**, both wools result in the fewest breaks overall, and **Wool B with high tension (B.H)** stands out with the lowest median (\~16) and the most consistent performance.
+
+### Interpretation:
+
+-   Increasing the tension level tends to **reduce the number of yarn breaks**, showing a negative relationship between tension and breakage.
+
+-   **Wool B** performs more reliably than Wool A across all tension levels, with the **best results under high tension**.
+
+-   The combination of **Wool B and high tension** appears to be the most effective setup for **minimizing yarn breaks** during the weaving process.

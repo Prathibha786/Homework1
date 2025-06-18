@@ -43,3 +43,7 @@ At **high tension**, both wools result in the fewest breaks overall, and **Wool 
 -   **Wool B** performs more reliably than Wool A across all tension levels, with the **best results under high tension**.
 
 -   The combination of **Wool B and high tension** appears to be the most effective setup for **minimizing yarn breaks** during the weaving process.
+
+```{r}
+summary(warpbreaks)
+```

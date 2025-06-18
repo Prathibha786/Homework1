@@ -47,3 +47,7 @@ At **high tension**, both wools result in the fewest breaks overall, and **Wool 
 ```{r}
 summary(warpbreaks)
 ```
+
+```{r}
+str(warpbreaks)
+```
